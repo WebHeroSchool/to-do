@@ -24,3 +24,5 @@ yarn-error.log*
 
 # other
 /.idea
+/.eslintrc.json
+/123
