@@ -9,7 +9,7 @@ const App = () => {
       <h1 style = {{textAlign: 'center'}}>Hello!!!</h1>
       <InputItem/>
       <ItemList/>
-      <Footer/>
+      <Footer remaind = '1'/>
     </div>
   );
 };
