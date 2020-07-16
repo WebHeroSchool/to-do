@@ -1,0 +1,14 @@
+.wrap {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #496084;
+  font-family: Arial;
+  color: #dba574;
+  outline: solid 1px #bb5252;
+}
+
+h1 {
+  text-align: center;
+  color: #bb5252;
+}

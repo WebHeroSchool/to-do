@@ -2,6 +2,7 @@ import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import Footer from '../Footer/Footer';
+import './App.css';
 
 const App = () => {
   const tasksData = [
@@ -10,14 +11,13 @@ const App = () => {
     {value: 'Создать to-do приложение используюя React'},
   ];
 
-
   return (
-    <>
-      <h1 style = {{textAlign: 'center'}}>Hello!!!</h1>
+    <div className='wrap'>
+      <h1>Hello!!!</h1>
       <InputItem/>
       <ItemList tasksData = {tasksData} />
       <Footer remainder = '1'/>
-    </>
+    </div>
   );
 };
 
