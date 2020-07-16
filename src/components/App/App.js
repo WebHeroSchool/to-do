@@ -4,13 +4,20 @@ import InputItem from '../InputItem/InputItem';
 import Footer from '../Footer/Footer';
 
 const App = () => {
+  const tasksData = [
+    {value: 'Сверстать сайт с помощью HTML5 и CSS3'},
+    {value: 'Написать игру на JS'},
+    {value: 'Создать to-do приложение используюя React'},
+  ];
+
+
   return (
-    <div>
+    <>
       <h1 style = {{textAlign: 'center'}}>Hello!!!</h1>
       <InputItem/>
-      <ItemList/>
-      <Footer remaind = '1'/>
-    </div>
+      <ItemList tasksData = {tasksData} />
+      <Footer remainder = '1'/>
+    </>
   );
 };
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const ItemList = () => (
+
+const ItemList = ({tasksData}) => (
   <ul>
-    <Item task = 'Сверстать сайт HTML и CSS'/>
-    <Item task = 'Написать игру на JS'/>
-    <Item task = 'Создать to-do приложение используюя React'/>
+    {tasksData.map(item => <Item key={item.value} task = {item.value} />)}
   </ul>
 );
 

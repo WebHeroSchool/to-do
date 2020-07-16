@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Footer = props => <p>Tasks left: {props.remaind}</p>;
+const Footer = ({remainder}) => <p>Tasks left: {remainder}</p>;
 
 export default Footer;

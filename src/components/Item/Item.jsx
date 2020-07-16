@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Item = props => <li>{props.task}</li>;
+const Item = ({task}) => <li>{task}</li>;
 
 export default Item;
