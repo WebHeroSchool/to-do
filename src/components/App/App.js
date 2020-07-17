@@ -6,9 +6,18 @@ import css from './App.module.css';
 
 const App = () => {
   const tasksData = [
-    {value: 'Сверстать сайт с помощью HTML5 и CSS3'},
-    {value: 'Написать игру на JS'},
-    {value: 'Создать to-do приложение используюя React'},
+    {
+      value: 'Сверстать сайт с помощью HTML5 и CSS3',
+      isDone: true,
+    },
+    {
+      value: 'Написать игру на JS',
+      isDone: true,
+    },
+    {
+      value: 'Создать to-do приложение используюя React',
+      isDone: false,
+    },
   ];
 
   return (
