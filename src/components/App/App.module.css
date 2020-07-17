@@ -1,14 +1,14 @@
 .wrap {
-  width: 300px;
+  width: 400px;
   height: 300px;
   margin: 0 auto;
   background-color: #496084;
   font-family: Arial, sans-serif;
   color: #dba574;
-  outline: solid 1px #bb5252;
+  outline: solid 1px #7d1b36;
 }
 
-h1 {
+.title {
   text-align: center;
   color: #bb5252;
 }

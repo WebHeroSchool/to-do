@@ -2,7 +2,7 @@ import React from 'react';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import Footer from '../Footer/Footer';
-import './App.css';
+import css from './App.module.css';
 
 const App = () => {
   const tasksData = [
@@ -12,8 +12,8 @@ const App = () => {
   ];
 
   return (
-    <div className='wrap'>
-      <h1>Hello!!!</h1>
+    <div className = {css.wrap}>
+      <h1 className = {css.title} >Hello!!! </h1>
       <InputItem/>
       <ItemList tasksData = {tasksData} />
       <Footer remainder = '1'/>
