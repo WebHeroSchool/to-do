@@ -1,9 +1,14 @@
+ul {
+  padding: 0;
+}
+
 .active {
+  list-style: none;
   color: #bdbd48;
 }
 
 .done {
   color: #fff;
-  opacity: .4;
+  opacity: .7;
   text-decoration: line-through;
 }
