@@ -1,0 +1,9 @@
+.active {
+  color: #bdbd48;
+}
+
+.done {
+  color: #fff;
+  opacity: .4;
+  text-decoration: line-through;
+}
