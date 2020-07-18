@@ -5,8 +5,8 @@ import Footer from '../Footer/Footer';
 import css from './App.module.css';
 
 class App extends Component {
-  render() {
-    const tasksData = [
+  state = {
+    tasksData: [
       {
         value: 'Сверстать сайт с помощью HTML5 и CSS3',
         isDone: true,
@@ -19,13 +19,15 @@ class App extends Component {
         value: 'Создать to-do приложение используюя React',
         isDone: false,
       },
-    ];
+    ],
+  };
 
+  render() {
     return (
       <div className = {css.wrap}>
         <h1 className = {css.title} >My to-do list </h1>
         <InputItem/>
-        <ItemList tasksData = {tasksData} />
+        <ItemList tasksData = {this.state.tasksData} />
         <Footer remainder = '1'/>
       </div>
     );
