@@ -29,7 +29,7 @@ class App extends Component {
         <Footer remainder = '1'/>
       </div>
     );
-  };
+  }
 };
 
 export default App;
