@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   markAsCompleted(statusFromItem) {
-    console.log(statusFromItem)
+    console.log(statusFromItem);
   }
 
 
