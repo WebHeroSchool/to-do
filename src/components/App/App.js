@@ -29,6 +29,7 @@ class App extends Component {
   }
 
   markAsCompleted(statusFromItem) {
+    // eslint-disable-next-line no-console
     console.log(statusFromItem);
   }
 
