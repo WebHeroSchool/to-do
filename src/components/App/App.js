@@ -22,12 +22,25 @@ class App extends Component {
     ],
   };
 
+  constructor(props) {
+    super(props);
+
+    this.markAsCompleted = this.markAsCompleted.bind(this);
+  }
+
+  markAsCompleted(statusFromItem) {
+    // eslint-disable-next-line no-console
+    console.log(statusFromItem);
+  }
+
+
   render() {
+    const {tasksData} = this.state;
     return (
       <div className = {css.wrap}>
         <h1 className = {css.title} >My to-do list </h1>
         <InputItem/>
-        <ItemList tasksData = {this.state.tasksData} />
+        <ItemList tasksData = {tasksData} onClick = {this.markAsCompleted} />
         <Footer remainder = '1'/>
       </div>
     );
