@@ -1,15 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
-import css from './Item.module.css';
+import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const Item = ({task, status, onClick}) => (
+const Item = ({task, status, toggleStatus}) => (
   <li className={
     classnames({
-      [css.active]: true,
-      [css.done]: status,})
+      [styles.active]: true,
+      [styles.done]: status
+    })
   }>
-    <Checkbox onClick={() => onClick(status)} />
+    <Checkbox onClick={() => toggleStatus(status)} />
     {task}
   </li>
 );

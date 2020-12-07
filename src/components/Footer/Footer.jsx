@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Footer.module.css';
+import style from './Footer.module.css';
 
 const Footer = ({remainder}) => (
-  <p className={css.text}>Tasks left: {remainder}</p>);
+  <p className={style.text}>Tasks left: {remainder}</p>);
 
 export default Footer;
