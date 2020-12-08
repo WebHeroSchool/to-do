@@ -1,7 +1,7 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const ItemList = ({items, toggleStatus}) => (
+const ItemList = ({items, toggleStatus, onDelete}) => (
   <ul>
     {items.map(item => (
       <Item
@@ -10,6 +10,7 @@ const ItemList = ({items, toggleStatus}) => (
         task = {item.value}
         status={item.isDone}
         toggleStatus={toggleStatus}
+        onDelete={onDelete}
       />)
     )}
   </ul>

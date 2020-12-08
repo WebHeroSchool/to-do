@@ -22,12 +22,23 @@ class App extends Component {
         isDone: false,
         id: 3,
       },
-    ],
-    count: 3,
+    ]
   };
 
-  // Будет неэффективно в случае боьлшого кол-ва элементов в массиве
-    // Есть боллее производительные способы?
+  removeItem = (itemId) => {
+    const {items} = this.state;
+    const removedItemIndex = items.findIndex(item => item.id === itemId)
+
+    const newItems = [
+      ...items.slice(0, removedItemIndex),
+      ...items.slice(removedItemIndex + 1)
+    ];
+
+    this.setState({
+      items: newItems
+    })
+  };
+
   toggleStatus = (taskId) => {
     const items =  this.state.items.map(item => {
       const newItem = {...item}
@@ -38,22 +49,20 @@ class App extends Component {
     })
 
     this.setState({items});
-  }
-
-  plus = () => {
-    this.setState(state => ({
-      count: ++state.count
-    }))
   };
 
   render() {
-    const {items, count} = this.state;
+    const {items} = this.state;
+    const count = items.length
     return (
       <div className = {styles.wrap}>
-        <button onClick={this.plus}>+</button>
-        <h1 className = {styles.title} >My to-do list {count}</h1>
+        <h1 className = {styles.title} >My to-do list</h1>
         <InputItem/>
-        <ItemList items={items} toggleStatus={this.toggleStatus} />
+        <ItemList
+          items={items}
+          toggleStatus={this.toggleStatus}
+          onDelete={this.removeItem}
+        />
         <Footer remainder = {count}/>
       </div>
     );
