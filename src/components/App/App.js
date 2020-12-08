@@ -27,15 +27,10 @@ class App extends Component {
 
   removeItem = (itemId) => {
     const {items} = this.state;
-    const removedItemIndex = items.findIndex(item => item.id === itemId)
-
-    const newItems = [
-      ...items.slice(0, removedItemIndex),
-      ...items.slice(removedItemIndex + 1)
-    ];
+    const remainedItems = items.filter(item => item.id !== itemId);
 
     this.setState({
-      items: newItems
+      items: remainedItems
     })
   };
 
