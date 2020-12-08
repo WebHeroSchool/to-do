@@ -2,21 +2,34 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
+import {DeleteForever} from '@material-ui/icons';
 
-const Item = ({id, task, status, toggleStatus}) => {
+const Item = ({id, task, status, toggleStatus, onDelete}) => {
     return (
-      <li className={
-          classnames({
-              [styles.active]: true,
-              [styles.done]: status
-          })
-      }>
-          <Checkbox
-            checked={status}
-            onChange={() => toggleStatus(id)}
-          />
-          {task}
-      </li>
+      <>
+          <li className={
+              classnames({
+                  [styles.active]: true,
+                  [styles.done]: status
+              })
+          }>
+              <Checkbox
+                color='primary'
+                // style={{ color: 'green' }}
+                checked={status}
+                onChange={() => toggleStatus(id)}
+              />
+              {task}
+              <span className={styles.hide}>
+                  <DeleteForever
+                    className={styles.icon}
+                    onClick={() => onDelete(id)}
+                    style={{ color: 'darkorange' }}
+                  />
+              </span>
+          </li>
+
+      </>
     )
 };
 
