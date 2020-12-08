@@ -5,7 +5,8 @@ const ItemList = ({items, toggleStatus}) => (
   <ul>
     {items.map(item => (
       <Item
-        key={item.value}
+        key={item.id}
+        id={item.id}
         task = {item.value}
         status={item.isDone}
         toggleStatus={toggleStatus}

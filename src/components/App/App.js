@@ -26,11 +26,19 @@ class App extends Component {
     count: 3,
   };
 
-  toggleStatus = (statusFromItem) => {
-    // eslint-disable-next-line no-console
-    // console.log(statusFromItem);
-    console.log(this.state.items[2].isDone === statusFromItem)
-  };
+  // Будет неэффективно в случае боьлшого кол-ва элементов в массиве
+    // Есть боллее производительные способы?
+  toggleStatus = (taskId) => {
+    const items =  this.state.items.map(item => {
+      const newItem = {...item}
+      if (item.id === taskId) {
+        newItem.isDone = !item.isDone
+      }
+      return newItem;
+    })
+
+    this.setState({items});
+  }
 
   plus = () => {
     this.setState(state => ({
