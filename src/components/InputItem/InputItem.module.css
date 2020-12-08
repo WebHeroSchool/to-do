@@ -1,10 +1,12 @@
 .wrap {
+  margin-top: 50px;
   display: flex;
   justify-content: space-around;
 }
 
 .main {
   width: 65%;
+  height: 32px;
   display: block;
   text-align: center;
 }

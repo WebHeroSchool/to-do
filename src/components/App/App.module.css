@@ -1,14 +1,13 @@
 .wrap {
-  width: 400px;
-  height: 300px;
+  width: 600px;
+  height: 700px;
   margin: 0 auto;
-  background-color: #496084;
+  background: linear-gradient(150deg, #4b7593, #848b84);
   font-family: Arial, sans-serif;
-  color: #dba574;
-  outline: solid 1px #7d1b36;
+  border: solid 4px #e0c9ce;
 }
 
 .title {
   text-align: center;
-  color: #bb5252;
+  color: #b0bcc7;
 }

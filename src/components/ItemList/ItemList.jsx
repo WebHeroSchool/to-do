@@ -1,15 +1,15 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-
-const ItemList = ({tasksData, onClick}) => (
+const ItemList = ({items, toggleStatus}) => (
   <ul>
-    {tasksData.map(item => (
+    {items.map(item => (
       <Item
-        key={item.value}
+        key={item.id}
+        id={item.id}
         task = {item.value}
         status={item.isDone}
-        onClick={onClick}
+        toggleStatus={toggleStatus}
       />)
     )}
   </ul>

@@ -1,12 +1,12 @@
 import React from 'react';
-import css from './InputItem.module.css';
+import style from './InputItem.module.css';
 import Button from '@material-ui/core/Button';
 
 const InputItem = () => (
-  <div className= {css.wrap}>
+  <div className= {style.wrap}>
     <input
       placeholder="You can add new task here"
-      className = {css.main}
+      className = {style.main}
     />
     <Button variant="contained" color="primary" href="#contained-buttons">
       Add
