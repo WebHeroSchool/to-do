@@ -4,7 +4,7 @@ import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 import {DeleteForever} from '@material-ui/icons';
 
-const Item = ({id, task, status, toggleStatus, onDelete}) => {
+const Item = ({id, task, status, toggleStatus, onDelete, indexInList}) => {
     return (
       <>
           <li className={
@@ -15,9 +15,8 @@ const Item = ({id, task, status, toggleStatus, onDelete}) => {
           }>
               <Checkbox
                 color='primary'
-                // style={{ color: 'green' }}
                 checked={status}
-                onChange={() => toggleStatus(id)}
+                onChange={() => toggleStatus(indexInList)}
               />
               {task}
               <span className={styles.hide}>

@@ -34,16 +34,13 @@ class App extends Component {
     })
   };
 
-  toggleStatus = (taskId) => {
-    const items =  this.state.items.map(item => {
-      const newItem = {...item}
-      if (item.id === taskId) {
-        newItem.isDone = !item.isDone
-      }
-      return newItem;
-    })
+  toggleStatus = (taskIndex) => {
 
-    this.setState({items});
+    this.setState(({items}) => {
+      const changedItem = (items[taskIndex]);
+      return [...items, changedItem.isDone = !changedItem.isDone]
+    });
+
   };
 
   render() {
