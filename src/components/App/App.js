@@ -37,10 +37,20 @@ class App extends Component {
   toggleStatus = (taskIndex) => {
 
     this.setState(({items}) => {
-      const changedItem = (items[taskIndex]);
-      return [...items, changedItem.isDone = !changedItem.isDone]
-    });
+      const oldItem = items[taskIndex];
+      const newItem = {...oldItem, isDone: !oldItem.isDone};
 
+      const newItems = [
+        ...items.slice(0, taskIndex),
+        newItem,
+        ...items.slice(taskIndex + 1)
+      ];
+
+      return {
+        items: newItems
+      };
+
+    });
   };
 
   render() {
