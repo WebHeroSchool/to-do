@@ -3,7 +3,7 @@ import Item from '../Item/Item';
 
 const ItemList = ({items, toggleStatus, onDelete}) => (
   <ul>
-    {items.map(item => (
+    {items.map((item, index) => (
       <Item
         key={item.id}
         id={item.id}
@@ -11,6 +11,7 @@ const ItemList = ({items, toggleStatus, onDelete}) => (
         status={item.isDone}
         toggleStatus={toggleStatus}
         onDelete={onDelete}
+        indexInList={index}
       />)
     )}
   </ul>

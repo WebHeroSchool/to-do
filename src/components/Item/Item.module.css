@@ -9,8 +9,7 @@ li {
 
 .active {
   margin-left: 15px;
-  display: inline-flex;
-  justify-content: center;
+  display: flex;
   align-items: center;
   color: #bdbd48;
 }
