@@ -7,7 +7,7 @@ const ItemList = ({items, toggleStatus, onDelete}) => (
       <Item
         key={item.id}
         id={item.id}
-        task = {item.value}
+        task={item.value}
         status={item.isDone}
         toggleStatus={toggleStatus}
         onDelete={onDelete}
@@ -16,5 +16,11 @@ const ItemList = ({items, toggleStatus, onDelete}) => (
     )}
   </ul>
 );
+
+ItemList.defaultProps = {
+  items: [
+    {value: 'Сделать еще что-то', isDone: false, id: 100}
+  ]
+}
 
 export default ItemList;
