@@ -43,6 +43,6 @@ Item.propTypes = {
   toggleStatus: PropTypes.func,
   onDelete: PropTypes.func,
   indexInList: PropTypes.number
-}
+};
 
 export default Item;

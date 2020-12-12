@@ -10,6 +10,6 @@ Footer.defaultProps = {
 
 Footer.propTypes = {
   remainder: PropTypes.number
-}
+};
 
 export default Footer;
