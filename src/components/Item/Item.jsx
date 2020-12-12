@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 import {DeleteForever} from '@material-ui/icons';
+import PropTypes from 'prop-types';
 
 const Item = ({id, task, status, toggleStatus, onDelete, indexInList}) => {
   return (
@@ -33,6 +34,15 @@ Item.defaultProps = {
   task: 'Сделать что-что',
   toggleStatus: () => {},
   onDelete: () => {}
+};
+
+Item.propTypes = {
+  id: PropTypes.number,
+  task: PropTypes.string,
+  status: PropTypes.bool,
+  toggleStatus: PropTypes.func,
+  onDelete: PropTypes.func,
+  indexInList: PropTypes.number
 };
 
 export default Item;

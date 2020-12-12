@@ -2,8 +2,13 @@ import React, {Component} from 'react';
 import style from './InputItem.module.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
 
 export default class InputItem extends Component {
+
+  static propTypes = {
+    addItem: PropTypes.func.isRequired
+  };
 
   state = {
     inputValue: '',
