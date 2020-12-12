@@ -7,8 +7,12 @@ import PropTypes from 'prop-types';
 
 export default class Item extends Component {
 
+  componentDidMount() {
+    this.interval = setInterval(() => console.log('interval'), 1000);
+  };
+
   componentWillUnmount() {
-    console.log('3 - Компонент удалился');
+    clearInterval(this.interval);
   };
 
   render() {

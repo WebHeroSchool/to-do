@@ -6,16 +6,6 @@ import styles from './App.module.css';
 
 class App extends Component {
 
-  componentDidMount() {
-    console.log('1 - Компонент смонтирован на страницу');
-  };
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevState !== this.state) {
-      console.log('2 - У компонента обновилось состояние');
-    }
-  };
-
   taskId = 4;
 
   state = {
