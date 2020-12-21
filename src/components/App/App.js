@@ -1,79 +1,63 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 import InputItem from '../InputItem/InputItem';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-class App extends Component {
+const initItems = [
+  { value: 'Сверстать сайт с помощью HTML5 и CSS3', isDone: true, id: 1 },
+  { value: 'Написать игру на JS', isDone: true, id: 2 },
+  { value: 'Создать to-do приложение используюя React', isDone: false, id: 3 },
+];
 
-  taskId = 4;
+const App = () => {
 
-  state = {
-    items: [
-      { value: 'Сверстать сайт с помощью HTML5 и CSS3', isDone: true, id: 1 },
-      { value: 'Написать игру на JS', isDone: true, id: 2 },
-      { value: 'Создать to-do приложение используюя React', isDone: false, id: 3 },
-    ]
-  };
+  const [ items, setItems ] = useState(initItems);
+  const [ taskId, setTaskId] = useState(4)
 
-  addItem = (label) => {
+  const count = items.length;
+
+  const addItem = (label) => {
+    setTaskId((id) => id + 1);
 
     const newItem = {
       value: label,
       isDone: false,
-      id: this.taskId++
+      id: taskId
     };
 
-    this.setState(({items}) => {
-      const updatedItems = [...items, newItem];
-      return {items: updatedItems};
-    });
+    setItems((items) => [...items, newItem]);
   };
 
-  deleteItem = (itemId) => {
-    const {items} = this.state;
+  const deleteItem = (itemId) => {
     const remainedItems = items.filter(item => item.id !== itemId);
-
-    this.setState({
-      items: remainedItems
-    })
+    setItems(remainedItems);
   };
 
-  toggleStatus = (taskIndex) => {
+  const toggleStatus = (taskIndex) => {
+    const oldItem = items[taskIndex];
+    const newItem = {...oldItem, isDone: !oldItem.isDone};
+    const newItems = [
+      ...items.slice(0, taskIndex),
+      newItem,
+      ...items.slice(taskIndex + 1)
+    ];
 
-    this.setState(({items}) => {
-      const oldItem = items[taskIndex];
-      const newItem = {...oldItem, isDone: !oldItem.isDone};
-
-      const newItems = [
-        ...items.slice(0, taskIndex),
-        newItem,
-        ...items.slice(taskIndex + 1)
-      ];
-
-      return {
-        items: newItems
-      };
-
-    });
+    setItems(newItems);
   };
 
-  render() {
-    const {items} = this.state;
-    const count = items.length
-    return (
-      <div className = {styles.wrap}>
-        <h1 className = {styles.title} >My to-do list</h1>
-        <InputItem addItem={this.addItem}/>
-        <ItemList
-          items={items}
-          toggleStatus={this.toggleStatus}
-          onDelete={this.deleteItem}
-        />
-        <Footer remainder = {count}/>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.wrap}>
+      <h1 className={styles.title}>My to-do list</h1>
+      <InputItem addItem={addItem}/>
+      <ItemList
+        items={items}
+        toggleStatus={toggleStatus}
+        onDelete={deleteItem}
+      />
+      <Footer remainder={count}/>
+    </div>
+  );
 }
 
 export default App;
