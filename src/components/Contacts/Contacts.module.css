@@ -1,0 +1,13 @@
+.wrap {
+  width: 600px;
+  height: 700px;
+  margin: 0 auto;
+  background: linear-gradient(150deg, #4b7593, #848b84);
+  font-family: Arial, sans-serif;
+  border: solid 4px #e0c9ce;
+}
+
+.title {
+  text-align: center;
+  color: #b0bcc7;
+}
