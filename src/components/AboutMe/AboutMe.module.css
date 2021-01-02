@@ -1,13 +1,80 @@
-.wrap {
-  width: 600px;
-  height: 700px;
-  margin: 0 auto;
-  background: linear-gradient(150deg, #4b7593, #848b84);
-  font-family: Arial, sans-serif;
-  border: solid 4px #e0c9ce;
+.container {
+    margin: 100px auto;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.title {
-  text-align: center;
-  color: #b0bcc7;
+.user_card {
+    width: 50%;
+}
+
+.username {
+    text-align: left;
+    color: #b0bcc7;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.bio {
+    text-align: right;
+    color: #b0bcc7;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+}
+
+.avatar_img {
+    width: 100%;
+    /*display: inline-block;*/
+    border-radius: 50%;
+}
+
+.list {
+    counter-reset: li;
+    list-style: none;
+    font: 14px "Trebuchet MS", "Lucida Sans";
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.link {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    background: #DAD2CA;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: .3s ease-out;
+}
+
+.link:hover {
+    background: #E9E4E0;
+}
+
+.link:hover:before {
+    transform: rotate(360deg);
+}
+
+.link:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #8FD4C1;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
 }

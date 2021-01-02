@@ -7,13 +7,13 @@ import PropTypes from 'prop-types';
 
 const Item = ({id, task, status, toggleStatus, onDelete, indexInList}) => {
 
-  useEffect(() => {
+  /*useEffect(() => {
     console.log('componentDidMount');
   }, [])
 
   useEffect(() => {
     console.log('componentDidUpdate');
-  }, [status])
+  }, [status])*/
 
   return (
     <li className={

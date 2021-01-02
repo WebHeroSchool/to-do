@@ -4,6 +4,7 @@ import Todo from '../Todo/Todo';
 import AboutMe from '../AboutMe/AboutMe';
 import Contacts from '../Contacts/Contacts';
 import Header from '../Header/Header';
+import './App.css';
 
 const App = () => {
   return (
