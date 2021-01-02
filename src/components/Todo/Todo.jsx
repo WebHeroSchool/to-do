@@ -11,9 +11,8 @@ const initItems = [
 ];
 
 const Todo = () => {
-
   const [ items, setItems ] = useState(initItems);
-  const [ taskId, setTaskId] = useState(4)
+  const [ taskId, setTaskId] = useState(4);
 
   const count = items.length;
 
@@ -58,6 +57,6 @@ const Todo = () => {
       <Footer remainder={count}/>
     </div>
   );
-}
+};
 
 export default Todo;
